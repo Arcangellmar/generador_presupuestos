@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Propuesta Económica</title>
+
+  <style>
+    :root {
+      --primary-red: #c62828;
+      --soft-red: #fdeaea;
+      --border-red: #f5c2c2;
+      --text-dark: #1c1c1e;
+      --text-gray: #6e6e73;
+      --background: #f5f5f7;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 0;
+      background-color: var(--background);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Helvetica, Arial, sans-serif;
+      color: var(--text-dark);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 48px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background-color: var(--soft-red);
+      color: var(--primary-red);
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary-red);
+      font-size: 34px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .client {
+      text-align: center;
+      font-size: 16px;
+      color: var(--text-gray);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: var(--primary-red);
+      font-size: 22px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--text-gray);
+      font-size: 16px;
+      margin-top: 0;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: var(--text-gray);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 16px;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th {
+      background-color: var(--soft-red);
+      color: var(--primary-red);
+      font-weight: 600;
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-red);
+    }
+
+    td {
+      padding: 14px;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .total-row {
+      background-color: #fff7f7;
+      font-weight: 600;
+      color: var(--primary-red);
+    }
+
+    .note {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    .footer {
+      margin-top: 48px;
+      font-size: 14px;
+      color: var(--text-gray);
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+      }
+      .card {
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <div class="badge">Propuesta Económica</div>
+
+    <h1>[VAR_TITULO_PROYECTO]</h1>
+
+    <div class="client">
+      Cliente: <strong>[VAR_CLIENTE]</strong>
+    </div>
+
+    <div class="section">
+      <h2>Objetivo General</h2>
+      <p>
+        [VAR_OBJETIVO_GENERAL]
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Objetivos Específicos</h2>
+      <ul>
+        [VAR_OBJETIVOS_ESPECIFICOS]
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Módulos Incluidos</h2>
+      <ul>
+        [VAR_MODULOS]
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Propuesta Económica</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cuota</th>
+            <th>Descripción</th>
+            <th>Monto (PEN)</th>
+            <th>Monto (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          [VAR_PROPUESTA_ECONOMICA]
+        </tbody>
+      </table>
+
+      <div class="note">
+        Precio global por el desarrollo completo del proyecto.<br>
+        Tipo de cambio referencial: 1 USD = [VAR_TIPO_CAMBIO] PEN.<br>
+        El precio no incluye IGV.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Infraestructura y Costos Operativos</h2>
+      <p>
+        Los costos asociados a infraestructura, servidores, servicios en la nube,
+        licencias de terceros o servicios externos no se encuentran incluidos en el
+        precio del desarrollo del proyecto.
+      </p>
+
+      <p>El cliente podrá optar por:</p>
+
+      <ul>
+        <li>
+          <strong>Contratar y administrar directamente la infraestructura</strong>,
+          asumiendo la totalidad de los costos mensuales y operativos.
+        </li>
+        <li>
+          <strong>Delegar la administración de la infraestructura al proveedor</strong>,
+          en cuyo caso los costos de servidor serán facturados de manera mensual,
+          según el consumo y características del servicio contratado.
+        </li>
+      </ul>
+
+      <p>
+        Cualquier costo operativo recurrente será comunicado previamente al cliente
+        y deberá contar con su aprobación antes de su implementación.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Condiciones Comerciales</h2>
+      <ul>
+        <li>Vigencia de la propuesta: 30 días calendario.</li>
+        <li>Los pagos se realizarán según el cronograma de cuotas acordado.</li>
+        <li>Cambios fuera del alcance serán cotizados por separado.</li>
+      </ul>
+    </div>
+
+    <!-- CLÁUSULA LEGAL AL FINAL -->
+    <div class="section">
+      <h2>Cláusula Legal</h2>
+      <p>
+        La presente propuesta tiene carácter comercial y referencial, y no constituye
+        un contrato definitivo hasta su aceptación formal por ambas partes.
+        El alcance del proyecto se limita a lo descrito en este documento.
+        Cualquier modificación o ampliación deberá ser evaluada y cotizada
+        mediante acuerdo escrito.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>
+        Atentamente,<br>
+        <strong>Equipo de Desarrollo</strong><br>
+        Fecha: <span id="fecha"></span>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById("fecha").innerText =
+    new Date().toLocaleDateString("es-PE");
+</script>
+
+</body>
+</html>
